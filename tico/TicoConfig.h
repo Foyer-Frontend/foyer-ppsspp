@@ -16,8 +16,8 @@ constexpr const char *PpssppSaveDataRoot = "sdmc:/tico/saves/psp";
 constexpr const char *StatesRoot = "sdmc:/tico/states";
 constexpr const char *PpssppSaveStates = "sdmc:/tico/states/psp";
 constexpr const char *BootLog = "sdmc:/switch/ppsspp-minimal.log";
-constexpr const char *LauncherNro = "sdmc:/switch/tico.nro";
-constexpr const char *LauncherNroFallback = "sdmc:/tico/tico.nro";
+constexpr const char *LauncherNro = "sdmc:/switch/foyer/foyer.nro";
+constexpr const char *LauncherNroFallback = "sdmc:/switch/tico.nro";
 constexpr const char *DefaultTitleFont = "romfs:/fonts/font.ttf";
 constexpr const char *DefaultDescriptionFont = "romfs:/fonts/description.ttf";
 }  // namespace Paths

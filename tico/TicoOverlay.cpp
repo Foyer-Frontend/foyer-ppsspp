@@ -1217,7 +1217,7 @@ void Overlay::DrawTitle(ImDrawList *drawList, ImVec2 displaySize, float scale, f
 	const float textX = cardX + (cardWidth - textSize.x) * 0.5f;
 	const float textY = currentY + (titleHeight - textSize.y) * 0.5f;
 
-	DrawOverlayText(drawList, font, fontSize, ImVec2(textX, textY), IM_COL32(200, 200, 200, (int)(255.0f * ease)), title);
+	DrawOverlayText(drawList, font, fontSize, ImVec2(textX, textY), IM_COL32(248, 248, 250, (int)(255.0f * ease)), title);
 }
 
 void Overlay::DrawSocialArea(ImDrawList *drawList, ImVec2 displaySize, float scale, float ease) {
@@ -1236,7 +1236,7 @@ void Overlay::DrawSocialArea(ImDrawList *drawList, ImVec2 displaySize, float sca
 		sideMargin + avatarSize * 0.5f - currentOffset,
 		topMargin + barHeight * 0.5f);
 
-	drawList->AddCircleFilled(avatarCenter, radius, IM_COL32(45, 45, 45, (int)(255.0f * ease)), 32);
+	drawList->AddCircleFilled(avatarCenter, radius, IM_COL32(24, 24, 26, (int)(255.0f * ease)), 32);
 
 	const float imageRadius = radius - (4.0f * scale);
 	const ImVec2 imageMin(avatarCenter.x - imageRadius, avatarCenter.y - imageRadius);
@@ -1270,7 +1270,7 @@ void Overlay::DrawMenu(ImDrawList *drawList, ImVec2 displaySize, float scale, fl
 	const ImVec2 menuMax(menuPos.x + menuSize.x, menuPos.y + menuSize.y);
 	const float cornerRadius = 16.0f * scale;
 
-	drawList->AddRectFilled(menuPos, menuMax, IM_COL32(45, 45, 45, (int)(255.0f * ease)), cornerRadius);
+	drawList->AddRectFilled(menuPos, menuMax, IM_COL32(24, 24, 26, (int)(255.0f * ease)), cornerRadius);
 
 	ImFont *font = ImGui::GetFont();
 	const float labelSize = ImGui::GetFontSize() * (menu_ == Menu::Cheats ? kCheatTextScale : 0.85f);
@@ -1293,7 +1293,7 @@ void Overlay::DrawMenu(ImDrawList *drawList, ImVec2 displaySize, float scale, fl
 				corners = ImDrawFlags_RoundCornersBottom;
 				itemRadius = cornerRadius;
 			}
-			drawList->AddRectFilled(itemMin, itemMax, IM_COL32(60, 60, 60, (int)(255.0f * ease)), itemRadius, corners);
+			drawList->AddRectFilled(itemMin, itemMax, IM_COL32(59, 130, 246, (int)(255.0f * ease)), itemRadius, corners);
 		}
 
 		char slotLabel[128];
@@ -1362,7 +1362,7 @@ void Overlay::DrawMenu(ImDrawList *drawList, ImVec2 displaySize, float scale, fl
 		const float textY = itemMin.y + rowTopPadding + (textAreaHeight - textSize.y) * 0.5f;
 		const ImU32 textColor = metadataRow
 			? IM_COL32(165, 165, 165, (int)(235.0f * ease))
-			: (selected ? IM_COL32(255, 255, 255, (int)(255.0f * ease)) : IM_COL32(200, 200, 200, (int)(255.0f * ease)));
+			: (selected ? IM_COL32(255, 255, 255, (int)(255.0f * ease)) : IM_COL32(248, 248, 250, (int)(255.0f * ease)));
 		if (drawCheckbox) {
 			const float boxSize = 18.0f * scale;
 			const float boxX = itemMin.x + 20.0f * scale;
@@ -1484,7 +1484,7 @@ void Overlay::DrawHelpers(ImDrawList *drawList, ImVec2 displaySize, float scale,
 	const float barY = displaySize.y - marginBottom - barHeight;
 	const float centerY = barY + barHeight * 0.5f;
 	float cursorX = barX + padding;
-	const ImU32 textColor = IM_COL32(200, 200, 200, (int)(255.0f * ease));
+	const ImU32 textColor = IM_COL32(248, 248, 250, (int)(255.0f * ease));
 
 	for (size_t i = 0; i < helpers.size(); ++i) {
 		const Helper &helper = helpers[i];
@@ -1523,7 +1523,7 @@ void Overlay::DrawStatus(ImDrawList *drawList, ImVec2 displaySize, float scale, 
 	const float barY = topMargin + ((1.0f - ease) * -20.0f * scale);
 	const float centerY = barY + barHeight * 0.5f;
 	float cursorX = barX + padding;
-	const ImU32 textColor = IM_COL32(200, 200, 200, (int)(255.0f * ease));
+	const ImU32 textColor = IM_COL32(248, 248, 250, (int)(255.0f * ease));
 
 	drawList->AddText(font, fontSize, ImVec2(cursorX, centerY - fontSize * 0.5f), textColor, timeText);
 	cursorX += font->CalcTextSizeA(fontSize, 10000.0f, 0.0f, timeText).x;
@@ -1549,7 +1549,7 @@ void Overlay::DrawStatus(ImDrawList *drawList, ImVec2 displaySize, float scale, 
 		const float pad = 4.0f * scale;
 		const ImVec2 fillMin(bodyMin.x + pad, bodyMin.y + pad);
 		const ImVec2 fillMax(fillMin.x + (bodyWidth - pad * 2.0f) * pct, bodyMax.y - pad);
-		const ImU32 fillColor = charging_ ? IM_COL32(255, 210, 90, (int)(255.0f * ease)) : IM_COL32(200, 200, 200, (int)(255.0f * ease));
+		const ImU32 fillColor = charging_ ? IM_COL32(255, 210, 90, (int)(255.0f * ease)) : IM_COL32(248, 248, 250, (int)(255.0f * ease));
 		drawList->AddRectFilled(fillMin, fillMax, fillColor, 1.5f * scale);
 	}
 

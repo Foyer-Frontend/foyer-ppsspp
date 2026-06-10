@@ -3026,9 +3026,9 @@ if(USE_LIBNX)
 	file(COPY "${CMAKE_SOURCE_DIR}/tico/lang" DESTINATION "${tico-ppsspp_ROMFS_DIR}")
 
 	nx_generate_nacp(tico-ppsspp.nacp
-		NAME "tico PPSSPP"
-		AUTHOR "ticoverse.com"
-		VERSION "2.0.0"
+		NAME "foyer PPSSPP"
+		AUTHOR "Foyer-Frontend"
+		VERSION "0.1.0"
 	)
 	nx_create_nro(tico-ppsspp NACP tico-ppsspp.nacp ROMFS "${tico-ppsspp_ROMFS_DIR}")
 endif()
