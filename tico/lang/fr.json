@@ -42,5 +42,7 @@
     "ra_leaderboard_failed": "Leaderboard Échoué",
     "ra_leaderboard": "Leaderboard",
     "ra_offline": "Hors ligne. Les déverrouillages seront synchronisés à la reconnexion.",
-    "ra_reconnected": "Reconnecté."
+    "ra_reconnected": "Reconnecté.",
+    "emulator_resume": "Resume",
+    "emulator_restart": "Restart game"
 }

@@ -42,5 +42,7 @@
     "ra_leaderboard_failed": "排行榜失败",
     "ra_leaderboard": "排行榜",
     "ra_offline": "离线。解锁将在重新连接后同步。",
-    "ra_reconnected": "已重新连接。"
+    "ra_reconnected": "已重新连接。",
+    "emulator_resume": "Resume",
+    "emulator_restart": "Restart game"
 }

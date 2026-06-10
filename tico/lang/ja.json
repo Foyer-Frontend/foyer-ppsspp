@@ -42,5 +42,7 @@
     "ra_leaderboard_failed": "リーダーボード失敗",
     "ra_leaderboard": "リーダーボード",
     "ra_offline": "オフラインです。解除は再接続時に同期されます。",
-    "ra_reconnected": "再接続しました。"
+    "ra_reconnected": "再接続しました。",
+    "emulator_resume": "Resume",
+    "emulator_restart": "Restart game"
 }

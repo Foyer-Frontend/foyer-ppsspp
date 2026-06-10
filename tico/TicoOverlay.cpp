@@ -34,6 +34,8 @@ constexpr float kQuickMenuWidth = 400.0f;
 struct QuickMenuItem {
 	const char *labelKey;
 	enum class Action {
+		Resume,
+		Restart,
 		SaveState,
 		LoadState,
 		Cheats,
@@ -42,7 +44,12 @@ struct QuickMenuItem {
 	} action;
 };
 
+// foyer pause-menu order — mirrors the foyer player's
+// PopulatePauseRoot: Resume / Restart / Save / Load / Cheats /
+// Display options / Quit to foyer.
 constexpr QuickMenuItem kQuickMenuItems[] = {
+	{"emulator_resume", QuickMenuItem::Action::Resume},
+	{"emulator_restart", QuickMenuItem::Action::Restart},
 	{"emulator_save_state", QuickMenuItem::Action::SaveState},
 	{"emulator_load_state", QuickMenuItem::Action::LoadState},
 	{"emulator_cheats", QuickMenuItem::Action::Cheats},
@@ -977,6 +984,15 @@ void Overlay::ExecuteSelection() {
 	}
 
 	const QuickMenuItem &item = kQuickMenuItems[QuickMenuStorageIndex(selection_)];
+	if (item.action == QuickMenuItem::Action::Resume) {
+		SetVisible(false);
+		return;
+	}
+	if (item.action == QuickMenuItem::Action::Restart) {
+		pendingCommand_ = { OverlayAction::Reset, 0 };
+		SetVisible(false);
+		return;
+	}
 	if (item.action == QuickMenuItem::Action::SaveState || item.action == QuickMenuItem::Action::LoadState) {
 		saveStateMode_ = item.action == QuickMenuItem::Action::SaveState ? OverlayAction::SaveState : OverlayAction::LoadState;
 		menu_ = Menu::SaveStates;

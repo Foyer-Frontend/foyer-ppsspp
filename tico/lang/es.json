@@ -42,5 +42,7 @@
     "ra_leaderboard_failed": "Leaderboard Fallido",
     "ra_leaderboard": "Leaderboard",
     "ra_offline": "Sin conexión. Los desbloqueos se sincronizarán al reconectar.",
-    "ra_reconnected": "Reconectado."
+    "ra_reconnected": "Reconectado.",
+    "emulator_resume": "Resume",
+    "emulator_restart": "Restart game"
 }

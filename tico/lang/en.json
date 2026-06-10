@@ -1,9 +1,9 @@
 {
-    "emulator_save_state": "Save State",
-    "emulator_load_state": "Load State",
+    "emulator_save_state": "Save state",
+    "emulator_load_state": "Load state",
     "emulator_cheats": "Cheats",
-    "emulator_settings": "Settings",
-    "emulator_exit_game": "Exit Game",
+    "emulator_settings": "Display options",
+    "emulator_exit_game": "Quit to foyer",
     "emulator_slot": "Slot %d (%s)",
     "emulator_in_use": "In Use",
     "emulator_empty": "Empty",
@@ -42,5 +42,7 @@
     "ra_leaderboard_failed": "Leaderboard Failed",
     "ra_leaderboard": "Leaderboard",
     "ra_offline": "Offline. Unlocks will sync when reconnected.",
-    "ra_reconnected": "Reconnected."
+    "ra_reconnected": "Reconnected.",
+    "emulator_resume": "Resume",
+    "emulator_restart": "Restart game"
 }
