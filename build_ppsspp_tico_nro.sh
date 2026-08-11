@@ -11,8 +11,18 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="${SCRIPT_DIR}/build_switch_tico"
 MESA_NVK_DIR="${MESA_NVK_DIR:-/nvk-build}"
 
-if [ -z "${SWITCH_VULKAN_LIBRARY:-}" ] && [ -f "${MESA_NVK_DIR}/src/nouveau/vulkan/libvulkan.a" ]; then
-	SWITCH_VULKAN_LIBRARY="${MESA_NVK_DIR}/src/nouveau/vulkan/libvulkan.a"
+if [ -z "${SWITCH_VULKAN_LIBRARY:-}" ]; then
+	if [ -f "${MESA_NVK_DIR}/src/nouveau/vulkan/libvulkan.a" ]; then
+		SWITCH_VULKAN_LIBRARY="${MESA_NVK_DIR}/src/nouveau/vulkan/libvulkan.a"
+	else
+		_found=$(find "${MESA_NVK_DIR}" -name libvulkan.a -path "*/src/nouveau/vulkan/libvulkan.a" 2>/dev/null | head -n1)
+		if [ -z "${_found}" ]; then
+			_found=$(find "${MESA_NVK_DIR}" /nvk-build /nvk-mesa /work/mb -name libvulkan.a 2>/dev/null | head -n1)
+		fi
+		if [ -n "${_found}" ]; then
+			SWITCH_VULKAN_LIBRARY="$_found"
+		fi
+	fi
 fi
 
 echo "=== Building PPSSPP Tico NRO ==="
