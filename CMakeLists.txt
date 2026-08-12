@@ -3005,6 +3005,9 @@ if(USE_LIBNX)
 		tico/TicoTranslationManager.h
 		tico/TicoUtils.h
 	)
+	if(USE_LIBNX AND SWITCH_VULKAN_ONLY)
+		target_sources(tico-ppsspp PRIVATE tico/vk_sw_stub.c)
+	endif()
 	target_link_libraries(tico-ppsspp ${COCOA_LIBRARY} ${QUARTZ_CORE_LIBRARY} ${IOKIT_LIBRARY} ${LinkCommon} minimp3)
 	target_include_directories(tico-ppsspp PRIVATE "${CMAKE_SOURCE_DIR}/rcheevos/include")
 	target_compile_definitions(tico-ppsspp PRIVATE RC_CLIENT_SUPPORTS_HASH)
